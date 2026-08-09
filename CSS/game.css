@@ -1,29 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-image: url(../Photos/game.png);
   background-size: cover;
   text-align: center;
   font-family: Arial, sans-serif;
 }
-
 h1 {
   font-size: 45px;
   color: #010a11;
 }
-
 #message {
   font-size: 24px;
   color: #070707;
 }
-
 .board {
   width: 900px;
   margin: 30px auto;
-
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
 }
-
 .card {
   height: 150px;
   background-color: #10547e;
@@ -36,13 +35,11 @@ h1 {
   font-size: 20px;
   cursor: pointer;
 }
-
 .card:hover {
   background-color: #2594da;
 }
-
 #game-details {
-  width: 280px;
+  width: 300px;
   margin: 20px auto;
   padding: 15px;
   background-color: #10547e;
@@ -54,7 +51,6 @@ h1 {
   font-size: 18px;
   margin: 12px;
 }
-
 #difficulty {
   padding: 5px;
   background-color: white;
@@ -63,7 +59,6 @@ h1 {
   border-radius: 5px;
   font-size: 14px;
 }
-
 .btn {
   display: inline-block;
   padding: 10px 20px;
