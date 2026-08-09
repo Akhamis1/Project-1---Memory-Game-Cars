@@ -1,0 +1,43 @@
+body {
+  background-image: url(../Photos/index.png);
+  background-size: cover;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.home {
+  width: 500px;
+  margin: 150px auto;
+  padding: 25px;
+  background-color: #10547e;
+  color: white;
+  border: 3px solid #073763;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 45px;
+}
+
+p {
+  font-size: 18px;
+}
+
+.btn {
+  display: inline-block;
+  width: 220px;
+  padding: 12px;
+  margin-top: 20px;
+
+  background-color: red;
+  color: white;
+
+  border-radius: 5px;
+  font-size: 18px;
+
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #3279ad;
+}
