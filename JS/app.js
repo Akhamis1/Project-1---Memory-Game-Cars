@@ -38,8 +38,6 @@ const livesElement =document.querySelector("#lives")
 const restartElement =document.querySelector("#restart-btn")
 const StartElement =document.querySelector("#start-btn")
 
-
-
 console.log( messageElement,cardElement,scoreElement,durationElement,diffcultyElement,livesElement,restartElement,StartElement)
 /*-------------------------------- Functions --------------------------------*/
 function init(){
@@ -76,3 +74,21 @@ durationElement.textContent = "⌛ Duration: " + duration
 livesElement.textContent = "⛽ Lives: " + lives
 messageElement.textContent = "Press Start 🏁"
 }
+function startGame(){
+if(timer){
+return
+}
+messageElement.textContent="Choose Two Cars 🏎️"
+timer = setInterval(function () {
+duration = duration -1
+durationElement.textContent = "⌛ Duration: " + duration
+if(duration ===0){
+clearInterval(timer)
+timer =null
+messageElement.textContent="Game Over ):"
+}
+},1000)
+}
+
+/*-------------------------------- Eventlistiner --------------------------------*/
+
