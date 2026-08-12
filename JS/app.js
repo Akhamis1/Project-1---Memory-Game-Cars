@@ -118,6 +118,16 @@ timer =null
 messageElement.textContent = "You Win :)"
 }
 }
+else{
+lives -=1
+livesElement.textContent= "⛽ Lives: " + lives
+messageElement.textContent = "Wrong "
+if(lives ===0){
+clearInterval(timer)
+timer = null
+messageElement.textContent= "Game Over ):"
+}
+}
 }
 
 /*-------------------------------- Eventlistiner --------------------------------*/
