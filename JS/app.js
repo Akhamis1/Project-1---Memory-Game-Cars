@@ -88,7 +88,6 @@ messageElement.textContent="Game Over ):"
 }
 },1000)
 }
-
 function handleClick(event){
 if(!timer){
 return
@@ -129,5 +128,19 @@ messageElement.textContent= "Game Over ):"
 }
 }
 }
+setTimeout(function () {
+if(cardImages[firstCard]=== cardImages[secondCard]){
+cardElement[firstCard].style.visibility = "hidden"
+cardElement[secondCard].style.visibility = "hidden"
+}
+else{
+cardElement[firstCard].style.backgroundImage = "none"
+cardElement[secondCard].style.backgroundImage = "none"
+cardElement[firstCard].textContent = "🏎️"
+cardElement[secondCard].textContent = "🏎️"
+}
+firstCard = null
+secondCard = null
+}, 1000)
 
 /*-------------------------------- Eventlistiner --------------------------------*/
