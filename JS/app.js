@@ -18,7 +18,7 @@ const cardImages =[
 "../Photos/Car6.png",
 "../Photos/Car6.png",
 ]
-console.log(cardImages)
+
 /*---------------------------- Variables (state) ----------------------------*/
 
 let firstCard
@@ -38,7 +38,6 @@ const livesElement =document.querySelector("#lives")
 const restartElement =document.querySelector("#restart-btn")
 const StartElement =document.querySelector("#start-btn")
 
-console.log( messageElement,cardElement,scoreElement,durationElement,diffcultyElement,livesElement,restartElement,StartElement)
 /*-------------------------------- Functions --------------------------------*/
 function init(){
 clearInterval(timer)
@@ -90,5 +89,25 @@ messageElement.textContent="Game Over ):"
 },1000)
 }
 
-/*-------------------------------- Eventlistiner --------------------------------*/
+function handleClick(event){
+if(!timer){
+return
+}
+if(secondCard !==null){
+return
+}
+let cardIndex= Number(event.target.id)
+if(cardIndex===firstCard){
+return
+}
+event.target.style.backgroundImage ="url(" + cardImages[cardIndex] + ")"
+event.target.textContent = ""
+if(firstCard === null){
+firstCard =cardIndex
+}
+else{
+secondCard =cardIndex
+}
+}
 
+/*-------------------------------- Eventlistiner --------------------------------*/
