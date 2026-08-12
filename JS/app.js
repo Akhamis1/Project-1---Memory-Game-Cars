@@ -1,24 +1,23 @@
 /*-------------------------------- Constants --------------------------------*/
 const cardImages =[
-"../Photos/Car1.png",
-"../Photos/Car1.png",
+"./Photos/Car1.png",
+"./Photos/Car1.png",
 
-"../Photos/Car2.png",
-"../Photos/Car2.png",
+"./Photos/Car2.png",
+"./Photos/Car2.png",
 
-"../Photos/Car3.png",
-"../Photos/Car3.png",
+"./Photos/Car3.png",
+"./Photos/Car3.png",
 
-"../Photos/Car4.png",
-"../Photos/Car4.png",
+"./Photos/Car4.png",
+"./Photos/Car4.png",
 
-"../Photos/Car5.png",
-"../Photos/Car5.png",
+"./Photos/Car5.png",
+"./Photos/Car5.png",
 
-"../Photos/Car6.png",
-"../Photos/Car6.png",
+"./Photos/Car6.png",
+"./Photos/Car6.png",
 ]
-
 /*---------------------------- Variables (state) ----------------------------*/
 
 let firstCard
@@ -27,7 +26,6 @@ let score
 let duration
 let lives
 let timer
-
 /*------------------------ Cached Element References ------------------------*/
 const messageElement = document.querySelector("#message")
 const cardElement = document.querySelectorAll(".card")
@@ -37,7 +35,6 @@ const diffcultyElement =document.querySelector("#difficulty")
 const livesElement =document.querySelector("#lives")
 const restartElement =document.querySelector("#restart-btn")
 const StartElement =document.querySelector("#start-btn")
-
 /*-------------------------------- Functions --------------------------------*/
 function init(){
 clearInterval(timer)
@@ -86,7 +83,7 @@ clearInterval(timer)
 timer =null
 messageElement.textContent="Game Over ):"
 }
-},1000)
+}, 1000)
 }
 function handleClick(event){
 if(!timer){
@@ -106,7 +103,7 @@ firstCard =cardIndex
 }
 else{
 secondCard =cardIndex
-}
+
 if(cardImages[firstCard]=== cardImages[secondCard]){
 score +=1
 scoreElement.textContent = "🏆 Score: " + score + " / 6"
@@ -118,7 +115,7 @@ messageElement.textContent = "You Win :)"
 }
 }
 else{
-lives -=1
+lives -= 1
 livesElement.textContent= "⛽ Lives: " + lives
 messageElement.textContent = "Wrong "
 if(lives ===0){
@@ -127,8 +124,9 @@ timer = null
 messageElement.textContent= "Game Over ):"
 }
 }
-}
+
 setTimeout(function () {
+
 if(cardImages[firstCard]=== cardImages[secondCard]){
 cardElement[firstCard].style.visibility = "hidden"
 cardElement[secondCard].style.visibility = "hidden"
@@ -139,8 +137,19 @@ cardElement[secondCard].style.backgroundImage = "none"
 cardElement[firstCard].textContent = "🏎️"
 cardElement[secondCard].textContent = "🏎️"
 }
+
 firstCard = null
 secondCard = null
+
 }, 1000)
 
-/*-------------------------------- Eventlistiner --------------------------------*/
+}
+}
+/*----------------------------- Event Listeners -----------------------------*/
+for (let i = 0; i < cardElement.length; i++) {
+cardElement[i].addEventListener("click", handleClick)
+}
+StartElement.addEventListener("click", startGame)
+restartElement.addEventListener("click", init)
+diffcultyElement.addEventListener("change", init)
+init()

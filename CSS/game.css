@@ -24,9 +24,11 @@ h1 {
   gap: 8px;
 }
 .card {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 150px;
   background-color: #10547e;
-  background-size: cover;
   border: 3px solid #10547e;
   border-radius: 10px;
   display: flex;
