@@ -108,6 +108,16 @@ firstCard =cardIndex
 else{
 secondCard =cardIndex
 }
+if(cardImages[firstCard]=== cardImages[secondCard]){
+score +=1
+scoreElement.textContent = "🏆 Score: " + score + " / 6"
+messageElement.textContent= "Match 🏁"
+if(score === 6){
+clearInterval(timer)
+timer =null
+messageElement.textContent = "You Win :)"
+}
+}
 }
 
 /*-------------------------------- Eventlistiner --------------------------------*/
